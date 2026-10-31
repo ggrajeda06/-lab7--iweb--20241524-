@@ -10,8 +10,6 @@ import java.sql.SQLException;
  *  - SedeDao y EquipoDao deben heredar de ella y obtener la conexión
  *    únicamente con getConnection().
  */
-
-
 public abstract class BaseDao { // TODO 2a: convertir en clase abstracta
 
     private static final String URL = "jdbc:mysql://localhost:3306/telecom_andina";
@@ -20,10 +18,6 @@ public abstract class BaseDao { // TODO 2a: convertir en clase abstracta
 
     public Connection getConnection() throws SQLException {
         // TODO 2a: cargar el driver (com.mysql.cj.jdbc.Driver) y retornar la conexión
-
-        throw new UnsupportedOperationException("getConnection() aún no implementado");
-    }
-    public Connection getConnection() throws SQLException {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
         } catch (ClassNotFoundException ex) {
@@ -33,8 +27,6 @@ public abstract class BaseDao { // TODO 2a: convertir en clase abstracta
         String pass = "root";
         String url = "jdbc:mysql://localhost:3306/hr?serverTimezone=America/Lima";
         return DriverManager.getConnection(url, user, pass);
-
-
     }
 }
 
